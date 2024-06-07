@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class Searchscreen extends StatelessWidget {
@@ -6,16 +8,6 @@ class Searchscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 2,
-        title: const Text(
-          "WEATHER",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: const Color(0xFF5da1ed),
-      ),
       body: Container(
         color: const Color(0xFF5da1ed),
         height: double.infinity,
@@ -34,6 +26,9 @@ class Searchscreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: TextField(
+                  onChanged:(value){
+                    log(value);
+                  } ,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.white),
