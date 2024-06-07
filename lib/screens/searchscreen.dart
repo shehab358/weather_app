@@ -26,9 +26,7 @@ class Searchscreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: TextField(
-                  onChanged:(value){
-                    log(value);
-                  } ,
+                  onSubmitted: (value) => log(value),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.white),
