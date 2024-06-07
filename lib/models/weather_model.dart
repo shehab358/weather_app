@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class WeatherModel {
   final String location;
   final String date;
