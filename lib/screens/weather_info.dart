@@ -14,6 +14,7 @@ class WeatherInfo extends StatelessWidget {
           ),
         ),
         backgroundColor: const Color(0xFF5da1ed),
+        elevation: 2,
       ),
       body: Container(
         color: const Color(0xFF5da1ed),
@@ -86,7 +87,7 @@ class WeatherInfo extends StatelessWidget {
                   "Sunny",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 26,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold),
                 ),
                 const Spacer(
