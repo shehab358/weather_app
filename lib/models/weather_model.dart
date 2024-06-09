@@ -16,14 +16,15 @@ class WeatherModel {
       required this.minTemp,
       required this.avgTemp});
 
-  factory WeatherModel.fromJson(json) {
+  factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
-        date: json['current']['last_updated'],
-        image: json['forecast']['forecastday'][0]['day']['icon'],
-        location: json["location"]['name'],
-        condition: json['forecast']['forecastday'][0]['day']['condition'],
-        maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
-        minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
-        avgTemp: json['forecast']['forecastday'][0]['day']['avgtemp_c']);
+      date: json['current']['last_updated'] ?? 'N/A',
+      image: json['forecast']['forecastday'][0]['day']['condition']['icon'] ?? '',
+      location: json["location"]['name'] ?? 'Unknown Location',
+      condition: json['forecast']['forecastday'][0]['day']['condition']['text'] ?? 'No Condition',
+      maxTemp: (json['forecast']['forecastday'][0]['day']['maxtemp_c'] ?? 0.0).toDouble(),
+      minTemp: (json['forecast']['forecastday'][0]['day']['mintemp_c'] ?? 0.0).toDouble(),
+      avgTemp: (json['forecast']['forecastday'][0]['day']['avgtemp_c'] ?? 0.0).toDouble(),
+    );
   }
 }

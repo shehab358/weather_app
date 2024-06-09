@@ -32,9 +32,10 @@ class WeatherInfo extends StatelessWidget {
                 const Text(
                   "Shebin Elkom",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const Text(
                   "Updated at : 14:53",
@@ -56,9 +57,10 @@ class WeatherInfo extends StatelessWidget {
                       const Text(
                         "43",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const Spacer(flex: 3),
                       const Column(
@@ -66,16 +68,18 @@ class WeatherInfo extends StatelessWidget {
                           Text(
                             "Max Temp : 44",
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           Text(
                             "Min Temp : 24",
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
@@ -86,9 +90,10 @@ class WeatherInfo extends StatelessWidget {
                 const Text(
                   "Sunny",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const Spacer(
                   flex: 2,
