@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/weather_model.dart';
@@ -12,6 +10,16 @@ class Searchscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "WEATHER",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: const Color(0xFF5da1ed),
+        elevation: 2,
+      ),
       body: Container(
         color: const Color(0xFF5da1ed),
         height: double.infinity,
@@ -31,9 +39,8 @@ class Searchscreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 child: TextField(
                   onSubmitted: (String value) async {
-                    WeatherModel weather = await WeatherServices(Dio())
+                    weather = await WeatherServices(Dio())
                         .getCurrentWeather(city: value);
-                    log(weather.location);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -72,3 +79,5 @@ class Searchscreen extends StatelessWidget {
     );
   }
 }
+
+WeatherModel? weather;

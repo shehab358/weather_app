@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/screens/noweather.dart';
 import 'package:weather_app/screens/searchscreen.dart';
 
-class Homescreen extends StatelessWidget {
+class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
 
+  @override
+  State<Homescreen> createState() => _HomescreenState();
+}
+
+class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +22,20 @@ class Homescreen extends StatelessWidget {
           ),
         ),
         backgroundColor: const Color(0xFF5da1ed),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Searchscreen(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.search))
+        ],
       ),
-      body: const Searchscreen(),
+      body: const NoWeatherBody(),
     );
   }
 }
