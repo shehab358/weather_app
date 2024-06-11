@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/screens/weather_info.dart';
 import 'package:weather_app/services/weather_services.dart';
 
 class Searchscreen extends StatelessWidget {
@@ -41,12 +40,8 @@ class Searchscreen extends StatelessWidget {
                   onSubmitted: (String value) async {
                     weather = await WeatherServices(Dio())
                         .getCurrentWeather(city: value);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => WeatherInfo(),
-                      ),
-                    );
+                    Navigator.pop(context);
+                    
                   },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(

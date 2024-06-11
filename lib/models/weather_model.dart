@@ -14,7 +14,8 @@ class WeatherModel {
       required this.condition,
       required this.maxTemp,
       required this.minTemp,
-      required this.avgTemp});
+      required this.avgTemp}
+      );
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(

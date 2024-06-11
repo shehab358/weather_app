@@ -8,16 +8,6 @@ class WeatherInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     weather;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "WEATHER",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: const Color(0xFF5da1ed),
-        elevation: 2,
-      ),
       body: Container(
         color: const Color(0xFF5da1ed),
         height: double.infinity,
