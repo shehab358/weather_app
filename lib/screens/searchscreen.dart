@@ -1,7 +1,4 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/services/weather_services.dart';
 
 class Searchscreen extends StatelessWidget {
   const Searchscreen({super.key});
@@ -37,12 +34,7 @@ class Searchscreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: TextField(
-                  onSubmitted: (String value) async {
-                    weather = await WeatherServices(Dio())
-                        .getCurrentWeather(city: value);
-                    Navigator.pop(context);
-                    
-                  },
+                  onSubmitted: (value) {} ,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.white),
@@ -75,4 +67,3 @@ class Searchscreen extends StatelessWidget {
   }
 }
 
-WeatherModel? weather;

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/searchscreen.dart';
 
 class WeatherInfo extends StatelessWidget {
   const WeatherInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    weather;
     return Scaffold(
       body: Container(
         color: const Color(0xFF5da1ed),

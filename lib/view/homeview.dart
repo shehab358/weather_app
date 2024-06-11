@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/screens/noweather.dart';
 import 'package:weather_app/screens/searchscreen.dart';
-import 'package:weather_app/screens/weather_info.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -36,7 +35,7 @@ class _HomescreenState extends State<Homescreen> {
               icon: const Icon(Icons.search))
         ],
       ),
-      body: weather == null ? const NoWeatherBody() : const WeatherInfo(),
+      body: const NoWeatherBody(),
     );
   }
 }
