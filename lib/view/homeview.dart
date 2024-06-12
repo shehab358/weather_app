@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/get_current_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app/cubits/get_current_weather_cubit/get_weather_states.dart';
 import 'package:weather_app/screens/noweather.dart';
 import 'package:weather_app/screens/searchscreen.dart';
+import 'package:weather_app/screens/weather_info.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -35,7 +39,17 @@ class _HomescreenState extends State<Homescreen> {
               icon: const Icon(Icons.search))
         ],
       ),
-      body: const NoWeatherBody(),
+      body: BlocBuilder<GetWeatherCubit, WeatherState>(
+        builder: (context, state) {
+          if (state is NoWeatherState) {
+            return const NoWeatherBody();
+          } else if (state is WeatherLoadedState) {
+            return const WeatherInfo();
+          } else {
+            return const Text("Error");
+          }
+        },
+      ),
     );
   }
 }
