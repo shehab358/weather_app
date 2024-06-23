@@ -12,21 +12,14 @@ class NoWeatherBody extends StatelessWidget {
       color: const Color(0xFF5da1ed),
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: Text(
-              'there is no weather 😔 start',
-              style: TextStyle(
-                fontSize: 30,
-              ),
-            ),
-          ),
           Text(
-            'searching now 🔍',
+            'there is no weather 😔 start searching now 🔍',
             style: TextStyle(
               fontSize: 30,
             ),
-          )
+          ),
         ],
       ),
     );

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/weather_model.dart';
 
 class WeatherInfo extends StatelessWidget {
-  const WeatherInfo({super.key});
-
+  const WeatherInfo({super.key, required this.weatherModel});
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
+    weatherModel.image.contains("https:");
+
     return Scaffold(
       body: Container(
         color: const Color(0xFF5da1ed),
@@ -19,17 +22,17 @@ class WeatherInfo extends StatelessWidget {
                 const Spacer(
                   flex: 1,
                 ),
-                const Text(
-                  "Shebin Elkom",
-                  style: TextStyle(
+                Text(
+                  weatherModel.location,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Text(
-                  "Updated at : 14:53",
-                  style: TextStyle(
+                Text(
+                  "Updated at ${weatherModel.date.hour}:${weatherModel.date.minute}",
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 26,
                       fontWeight: FontWeight.bold),
@@ -40,32 +43,32 @@ class WeatherInfo extends StatelessWidget {
                   child: Row(
                     children: [
                       const Spacer(flex: 1),
-                      Image.asset(
-                        "assets/images/clear.png",
+                      Image.network(
+                        "https:${weatherModel.image}",
                       ),
                       const Spacer(flex: 3),
-                      const Text(
-                        "43",
-                        style: TextStyle(
+                      Text(
+                        weatherModel.avgTemp.toString(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Spacer(flex: 3),
-                      const Column(
+                      Column(
                         children: [
                           Text(
-                            "Max Temp : 44",
-                            style: TextStyle(
+                            "Max Temp : ${weatherModel.maxTemp.toInt()}",
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            "Min Temp : 24",
-                            style: TextStyle(
+                            "Min Temp : ${weatherModel.minTemp.toInt()}",
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -77,9 +80,9 @@ class WeatherInfo extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Text(
-                  "Sunny",
-                  style: TextStyle(
+                Text(
+                  weatherModel.condition,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -96,3 +99,4 @@ class WeatherInfo extends StatelessWidget {
     );
   }
 }
+

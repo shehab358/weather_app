@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/get_current_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/cubits/get_current_weather_cubit/get_weather_states.dart';
@@ -44,7 +45,10 @@ class _HomescreenState extends State<Homescreen> {
           if (state is NoWeatherState) {
             return const NoWeatherBody();
           } else if (state is WeatherLoadedState) {
-            return const WeatherInfo();
+            state.weatherModel;
+            return  WeatherInfo(
+              weatherModel: state.weatherModel,
+            );
           } else {
             return const Text("Error");
           }
